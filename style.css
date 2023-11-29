@@ -1,0 +1,136 @@
+body {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .game_board_wrap {
+    background-color: #578a35;
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 20px;
+  }
+  
+  .header {
+    background-color: #4a762c;
+    margin: 0 -20px;
+    padding: 20px;
+  }
+  
+  #score {
+    color: #fff;
+    display: flex;
+  }
+  
+  #score::before {
+    content: "";
+    margin-right: 8px;
+    background: url(".assets/apple.png/") 0 0 /100%;
+    width: 25px;
+    height: 25px;
+    margin-top: -5px;
+  }
+  
+  #game_board {
+    width: 600px;
+    height: 400px;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    background: repeating-linear-gradient(rgba(181, 212, 92, 0.8), rgba(181, 212, 92, 0.8) 20px, rgba(175, 208, 86, 0.8) 20px, rgba(175, 208, 86, 0.8) 40px), repeating-linear-gradient(90deg, rgba(181, 212, 92, 0.8), rgba(
+            181,
+            212,
+            92,
+            0.8
+          ) 20px, rgba(175, 208, 86, 0.8) 20px, rgba(175, 208, 86, 0.8) 40px);
+  }
+  .worm {
+    width: 20px;
+    height: 20px;
+    background-color: #6179f2;
+    position: absolute;
+    top: 200px;
+    left: 300px;
+    z-index: 1;
+  }
+  
+  /* rounded corner */
+  .worm[data-direction="right"] + .worm[data-direction="up"] {
+    border-radius: 0 0 50% 0;
+  }
+  
+  .worm[data-direction="right"] + .worm[data-direction="down"] {
+    border-radius: 0 50% 0 0;
+  }
+  
+  .worm[data-direction="left"] + .worm[data-direction="up"] {
+    border-radius: 0 0 0 50%;
+  }
+  
+  .worm[data-direction="left"] + .worm[data-direction="down"] {
+    border-radius: 50% 0 0 0;
+  }
+  
+  .worm[data-direction="down"] + .worm[data-direction="left"] {
+    border-radius: 0 0 50% 0;
+  }
+  
+  .worm[data-direction="down"] + .worm[data-direction="right"] {
+    border-radius: 0 0 0 50%;
+  }
+  
+  .worm[data-direction="up"] + .worm[data-direction="left"] {
+    border-radius: 0 50% 0 0;
+  }
+  
+  .worm[data-direction="up"] + .worm[data-direction="right"] {
+    border-radius: 50% 0 0 0;
+  }
+  
+  /* tail */
+  .worm.tail[data-direction="right"] {
+    border-radius: 50% 0 0 50%;
+  }
+  
+  .worm.tail[data-direction="down"] {
+    border-radius: 50% 50% 0 0;
+  }
+  
+  .worm.tail[data-direction="left"] {
+    border-radius: 0 50% 50% 0;
+  }
+  
+  .worm.tail[data-direction="up"] {
+    border-radius: 0 0 50% 50%;
+  }
+  
+  /* head */
+  .worm.head[data-direction="right"] {
+    border-radius: 0 50% 50% 0;
+  }
+  
+  .worm.head[data-direction="down"] {
+    border-radius: 0 0 50% 50%;
+  }
+  
+  .worm.head[data-direction="left"] {
+    border-radius: 50% 0 0 50%;
+  }
+  
+  .worm.head[data-direction="up"] {
+    border-radius: 50% 50% 0 0;
+  }
+  
+  .worm.head.tail {
+    border-radius: 50%;
+  }
+  
+  #food {
+    width: 20px;
+    height: 20px;
+    background: url("./assets/apple.png") 0 0 / cover;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    z-index: 1;
+  }
